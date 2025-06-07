@@ -1,0 +1,16 @@
+<div class="card mt-3">
+  <div class="card-header">List of Files</div>
+  <div *ngIf="fileListError" class="alert alert-danger mt-3">{{ fileListError }}</div>
+  <ul class="list-group list-group-flush" *ngIf="fileInfos | async as files">
+    <li class="list-group-item" *ngFor="let file of files">
+      <div class="row">
+        <div class="col-8">
+          <a href="javascript:void(0);" (click)="openFile(file.id)">{{ file.name }}</a>
+        </div>
+        <div class="col-4 text-right">
+          <a href="http://localhost:8080/files/{{file.id}}?disposition=attachment" class="btn btn-primary btn-sm">Download</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

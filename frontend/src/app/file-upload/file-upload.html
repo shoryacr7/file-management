@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <label class="btn btn-default p-0">
+        <input type="file" #fileInput (change)="selectFile($event)" accept=".txt,.jpg,.png,.json" />
+      </label>
+    </div>
+
+    <div class="col-4">
+      <button class="btn btn-success btn-sm" [disabled]="!currentFile" (click)="upload()">
+        Upload
+      </button>
+      <button class="btn btn-danger btn-sm ml-2" [disabled]="!currentFile && !message" (click)="reset()">
+        Reset
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="message" class="alert alert-info mt-3" role="alert">{{ message }}</div>
+  <div class="mt-3">
+    <small class="text-muted">Allowed file types: .txt, .jpg, .png, .json</small>
+  </div>
+</div>
