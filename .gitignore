@@ -1,0 +1,20 @@
+# Backend (Java/Maven)
+/backend/target/
+/backend/uploads/
+/backend/*.log
+
+# Frontend (Node/Angular)
+/frontend/node_modules/
+/frontend/dist/
+/frontend/coverage/
+/frontend/*.log
+/frontend/.vscode/
+
+# IDE files
+.idea/
+*.iml
+*.iws
+
+# OS files
+.DS_Store
+Thumbs.db
